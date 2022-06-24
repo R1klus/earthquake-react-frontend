@@ -1,15 +1,16 @@
-name: Production workflow
+name: Development workflow
 
 on:
   push:
     branches:
-      - master
+      - dev
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: Development Code
         uses: actions/checkout@v2
       - name: Use Node.js 17.x
         uses: actions/setup-node@v1
@@ -22,5 +23,5 @@ jobs:
         with:
           args: deploy --dir=build --prod
           heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
-          heroku_app_name: 'earthquake-react-app-prod'
+          heroku_app_name: 'earthquake-react-app-dev'
           heroku_email: 'rikhardur.fridgeirsson@gmail.com'
