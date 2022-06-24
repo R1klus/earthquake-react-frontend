@@ -1,4 +1,4 @@
-import {GET_EARTHQUAKE_DATA} from "../constants";
+import {FETCH_FROM_API, GET_EARTHQUAKE_DATA} from "../constants";
 
 export default function earthquakeReducer(state=[], action){
     switch(action.type){
