@@ -1,2 +1,21 @@
 @import "../../styles/colors.scss";
 
+.mapboxgl-ctrl {
+  display: none !important;
+}
+
+.map-container {
+  height: 90vh;
+  width: 90vw;
+  padding: 20px;
+  margin: auto;
+  border-radius: 10%;
+}
+
+.mapboxgl-canvas {
+  border-radius: 1% !important;
+}
+
+.bi-current-location {
+  font-size: 1rem;
+}

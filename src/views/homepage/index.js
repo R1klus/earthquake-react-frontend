@@ -16,7 +16,10 @@ const Homepage = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className="flex-container">
+            <h1>
+                Icelandic Earthquake Data
+            </h1>
             <EarthquakeMap/>
         </div>
     )

@@ -1,15 +1,12 @@
-.mapboxgl-ctrl {
-  display: none !important;
+.flex-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  flex-grow: 1;
 }
 
-.map-container {
-  height: 90vh;
-  width: 90vw;
-  padding: 20px;
+.flex-container h1 {
+  width: 100%;
   margin: auto;
-  border-radius: 10%;
-}
-
-.mapboxgl-canvas {
-  border-radius: 1% !important;
+  text-align: center;
 }
