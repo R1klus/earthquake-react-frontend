@@ -1,4 +1,4 @@
-import {FETCH_FROM_API, GET_EARTHQUAKE_DATA} from "../constants";
+import {FETCH_FROM_API} from "../constants";
 import {getEarthquakeData} from "../actions";
 
 
