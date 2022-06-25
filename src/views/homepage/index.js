@@ -1,7 +1,7 @@
-import {useEffect, useState} from 'react';
-import {useDispatch, useSelector} from 'react-redux';
+import {useEffect} from 'react';
+import {useDispatch} from 'react-redux';
 import './styles.scss';
-import {fetchFromApi, getEarthquakeData} from "../../redux/actions";
+import {fetchFromApi} from "../../redux/actions";
 import EarthquakeMap from "../../components/map";
 
 const Homepage = () => {
@@ -13,7 +13,7 @@ const Homepage = () => {
 
     useEffect(() => {
         updateEarthquakeData();
-    }, [dispatch])
+    })
 
     return (
         <div className="flex-container">
