@@ -15,16 +15,17 @@ const EarthquakeMap = () => {
     const [viewport, setViewport] = useState({
         latitude: 64.8085175,
         longitude: -18.806046007266094,
-        width: "95%",
-        height: "95%",
-        zoom: 7,
+        zoom: 6,
     })
 
+    const level1 = 0xfab30a;
+    const level2 = 0xf57d17;
+    const level3 = 0xfa340a;
     const calculateColorValue = (percentage) => {
         const percentColors = [
-            { percentage: 0.0, color: { r: 0x00, g: 0xff, b: 0 } },
-            { percentage: 0.25, color: { r: 0xff, g: 0xff, b: 0 } },
-            { percentage: 0.5, color: { r: 0xff, g: 0x00, b: 0 } } ];
+            { percentage: 0.0, color: level1 },
+            { percentage: 0.25, color: level2 },
+            { percentage: 0.5, color: level3 } ];
 
         const getColorForPercentage = (percentage) => {
             for (var i = 1; i < percentColors.length - 1; i++) {
