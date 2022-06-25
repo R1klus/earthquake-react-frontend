@@ -26,6 +26,7 @@ const EarthquakeMap = () => {
             {percentage: 0.5, color: {r: 0xFA, g: 0x34, b: 0x0A}}];
 
 
+
         const getColorForPercentage = (percentage) => {
             for (var i = 1; i < percentColors.length - 1; i++) {
                 if (percentage < percentColors[i].percentage) {
