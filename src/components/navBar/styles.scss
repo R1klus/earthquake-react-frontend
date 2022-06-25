@@ -2,7 +2,7 @@
 
 .NavbarItems {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   font-size: 1.5rem;
   height: 2.75rem;
@@ -14,7 +14,7 @@
 
 .navbar-logo {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   align-items: center;
   cursor: pointer;
   color: $battleship-grey;
@@ -25,12 +25,12 @@
 
 .nav-menu {
   display: flex;
+  justify-content: flex-end;
   flex-flow: row;
   list-style: none;
   text-align: center;
   width: 100%;
   padding-right: 2.5%;
-  justify-content: end;
 }
 
 .menu-icon {

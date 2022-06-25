@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi} from "../../redux/actions";
-import EarthquakeMap from "../../components/map";
 import Navbar from "../../components/navBar";
 
 const DataView = () => {
