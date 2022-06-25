@@ -22,9 +22,9 @@ const EarthquakeMap = () => {
 
     const calculateColorValue = (percentage) => {
         const percentColors = [
-            { percentage: 0.0, color: { r: 0x00, g: 0xff, b: 0 } },
-            { percentage: 0.25, color: { r: 0xff, g: 0xff, b: 0 } },
-            { percentage: 0.5, color: { r: 0xff, g: 0x00, b: 0 } } ];
+            { percentage: 0.0, color: { r: 0xFA, g: 0xB3, b: 0x0A } },
+            { percentage: 0.25, color: { r: 0xF5, g: 0x7D, b: 17 } },
+            { percentage: 0.5, color: { r: 0xFA, g: 0x34, b: 0x0A } } ];
 
         const getColorForPercentage = (percentage) => {
             for (var i = 1; i < percentColors.length - 1; i++) {
