@@ -29,8 +29,15 @@
 .map-legend {
   position: absolute;
   margin: 1rem 0 0 1rem;
-  width: 10rem;
+  width: 12rem;
   text-align: center;
+  backdrop-filter: blur(0.25rem);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  border: 1px solid $battleship-grey;
+  box-shadow: 2px 2px 2px $battleship-grey;
+  color: $battleship-grey;
 }
 
 .richter-scale {
