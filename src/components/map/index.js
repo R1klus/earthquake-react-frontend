@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useSelector} from "react-redux";
-import ReactMapGL, {Marker, Popup} from "react-map-gl"
+import ReactMapGL, {Layer, Marker, Popup} from "react-map-gl"
 import "./styles.scss"
 import {MdReportProblem} from "react-icons/md"
 
@@ -51,12 +51,20 @@ const EarthquakeMap = () => {
 
     return (
         <div className="map-container">
+
             <ReactMapGL
                 {...viewport}
                 mapboxAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
-                mapStyle="mapbox://styles/mapbox/dark-v10"
+                mapStyle="mapbox://styles/mapbox/light-v10"
                 onMove={evt => setViewport(evt.viewState)}
             >
+                <div className="map-legend">
+                    <h2>
+                    Richter Scale
+                    </h2>
+                <div className="richter-scale">&nbsp;</div>
+                    <div className="richter-data-labels"><span>0</span> <span>2</span> <span>4</span> <span>6</span> <span>8</span> <span>10</span></div>
+                </div>
                 {earthquakes.map((earthquake, index) => (
                     <Marker key={index} longitude={earthquake.longitude}
                             latitude={earthquake.latitude} onClick={e => {
@@ -84,7 +92,7 @@ const EarthquakeMap = () => {
                             <div><b>Latitude:</b> {selectedEarthquake.latitude}</div>
                             <div><b>Longitude:</b> {selectedEarthquake.longitude}</div>
                             <div><b>Quality:</b> {selectedEarthquake.quality}</div>
-                            <div><b>Size (Magnitude):</b> {selectedEarthquake.size}</div>
+                            <div><b>Richter:</b> {selectedEarthquake.size}</div>
                             <div><b>Time:</b> {selectedEarthquake.timestamp ? new Date(selectedEarthquake.timestamp).toString() : null}</div>
                         </div>
 
