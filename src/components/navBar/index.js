@@ -1,9 +1,12 @@
-import React, {useState} from 'react';
+import React, {useContext, useState} from 'react';
 import {MenuItems} from "../menuItems/menuItems";
 import './styles.scss';
+import ReactSwitch from "react-switch"
+import {themeContext} from "../../App";
 
 const Navbar = () => {
     const [navMenu, setNavMenu] = useState(false);
+    const theme = useContext(themeContext);
 
     const handleClick = () => {
         setNavMenu(!navMenu);
@@ -17,12 +20,24 @@ const Navbar = () => {
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={navMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}/>
                 </div>
+
+
+
+
                 <ul className={navMenu ? 'nav-menu active' : 'nav-menu'}>
-                    {MenuItems.map((item, index) => {
+                    <li>
+                        <div className="switch">
+                            <div>Darkmode</div>
+                            <ReactSwitch height={16} width={28} onChange={theme.toggleTheme} checked={theme.currentTheme === "dark"}/>
+                        </div>
+                    </li>
+
+                    {MenuItems.map((item) => {
                         return (
-                            <li key={{index}}><a className={item.cName} href={item.url}>{item.title}</a></li>
+                            <li key={item.title}><a className={item.cName} href={item.url}>{item.title}</a></li>
                         )
                     })}
+
                 </ul>
             </nav>
         </div>
