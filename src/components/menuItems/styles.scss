@@ -1,0 +1,30 @@
+@import "../../styles/colors.scss";
+
+.menu-item {
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  color: $battleship-grey;
+}
+
+
+.menu-item:hover {
+  text-decoration: underline;
+  text-decoration-color: $cultured;
+  text-decoration-thickness: 4px;
+  border-radius: 4px;
+  transition: all 0.2s ease-out;
+}
+
+@media screen and (max-width: 960px) {
+  .menu-item {
+    text-align: center;
+    padding: 1rem;
+    display: table;
+  }
+
+  .menu-item:hover {
+    border-radius: 0;
+    color: $cultured;
+  }
+}
