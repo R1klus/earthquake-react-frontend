@@ -1,7 +1,7 @@
-import React, {useRef, useEffect, useState} from "react";
+import React, { useEffect, useState} from "react";
 import {useSelector} from "react-redux";
 import ReactMapGL, {Marker} from "react-map-gl"
-import styles from "./styles.scss"
+import "./styles.scss"
 import { MdReportProblem } from "react-icons/md"
 
 
