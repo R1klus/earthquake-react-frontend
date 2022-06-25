@@ -2,6 +2,7 @@ import {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi, getEarthquakeData} from "../../redux/actions";
+import EarthquakeMap from "../../components/map";
 
 const Homepage = () => {
     const dispatch = useDispatch();
@@ -16,9 +17,7 @@ const Homepage = () => {
 
     return (
         <div>
-            <h1>
-               Homepage!
-            </h1>
+            <EarthquakeMap/>
         </div>
     )
 }
