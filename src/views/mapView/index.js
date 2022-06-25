@@ -3,8 +3,9 @@ import {useDispatch} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi} from "../../redux/actions";
 import EarthquakeMap from "../../components/map";
+import Navbar from "../../components/navBar";
 
-const Homepage = () => {
+const MapView = () => {
     const dispatch = useDispatch();
 
     const updateEarthquakeData = () => {
@@ -16,13 +17,13 @@ const Homepage = () => {
     })
 
     return (
-        <div className="flex-container">
-            <h1>
-                Icelandic Earthquake Data
-            </h1>
-            <EarthquakeMap/>
+        <div>
+            <Navbar/>
+            <div className="flex-container">
+                <EarthquakeMap/>
+            </div>
         </div>
     )
 }
 
-export default Homepage
+export default MapView
