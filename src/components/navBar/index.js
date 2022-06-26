@@ -3,6 +3,7 @@ import {MenuItems} from "../menuItems/menuItems";
 import './styles.scss';
 import ReactSwitch from "react-switch"
 import {themeContext} from "../../App";
+import FrequencyInput from "../frequencyInput";
 
 const Navbar = () => {
     const [navMenu, setNavMenu] = useState(false);
@@ -20,6 +21,9 @@ const Navbar = () => {
                     <i className={navMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}/>
                 </div>
                 <ul className={navMenu ? 'nav-menu active' : 'nav-menu'}>
+                    <li>
+                        <FrequencyInput/>
+                    </li>
                     <li>
                         <div className="switch">
                             <div>Darkmode</div>
