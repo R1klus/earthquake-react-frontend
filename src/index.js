@@ -5,7 +5,6 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import {applyMiddleware, createStore} from "redux";
 import {Provider} from "react-redux";
-
 import reducers from "./redux/reducers";
 import earthquakeDataHandler from "./redux/middlewares/earthquakeDataHandler";
 

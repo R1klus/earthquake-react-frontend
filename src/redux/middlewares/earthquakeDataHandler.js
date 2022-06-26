@@ -6,7 +6,6 @@ const earthquakeDataHandler = (store) => {
     return (next) => async (action) => {
         if (action.type === FETCH_FROM_API) {
             const url = process.env.REACT_APP_EARTHQUAKE_API_URL;
-
             const options = {
                 method: "GET",
                 headers: {
@@ -18,7 +17,6 @@ const earthquakeDataHandler = (store) => {
             if (!response.ok){
                 throw new Error(`HTTP Error!, Status: ${response.status}`)
             }
-
             const earthquakeData = await response.json();
             store.dispatch(getEarthquakeData(earthquakeData.results));
         }
@@ -27,3 +25,4 @@ const earthquakeDataHandler = (store) => {
 };
 
 export default earthquakeDataHandler
+
