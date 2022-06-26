@@ -1,25 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
 import {applyMiddleware, createStore} from "redux";
 import {Provider} from "react-redux";
-
 import reducers from "./redux/reducers";
 import earthquakeDataHandler from "./redux/middlewares/earthquakeDataHandler";
 
-
+const store = createStore(reducers, applyMiddleware(earthquakeDataHandler));
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
-      <Router>
-          <Provider store={createStore(reducers, applyMiddleware(earthquakeDataHandler))}>
-            <App />
-          </Provider>
-      </Router>
-  </React.StrictMode>
+    <Router>
+        <Provider store={store}>
+            <App/>
+        </Provider>
+    </Router>
 );
 
 // If you want to start measuring performance in your app, pass a function

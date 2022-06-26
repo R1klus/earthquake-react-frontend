@@ -1,12 +1,11 @@
-import {GET_EARTHQUAKE_DATA} from "../constants";
+import {FETCH_FROM_API} from "../constants";
 import {getEarthquakeData} from "../actions";
 
 
 const earthquakeDataHandler = (store) => {
     return (next) => async (action) => {
-        if (action.type === GET_EARTHQUAKE_DATA) {
-            const url = process.env.EARTHQUAKE_API_URL;
-
+        if (action.type === FETCH_FROM_API) {
+            const url = process.env.REACT_APP_EARTHQUAKE_API_URL;
             const options = {
                 method: "GET",
                 headers: {
@@ -19,10 +18,11 @@ const earthquakeDataHandler = (store) => {
                 throw new Error(`HTTP Error!, Status: ${response.status}`)
             }
             const earthquakeData = await response.json();
-            console.log(earthquakeData);
-            store.dispatch(getEarthquakeData(earthquakeData));
+            store.dispatch(getEarthquakeData(earthquakeData.results));
         }
-    }
-}
+        return next(action);
+    };
+};
 
-export default earthquakeDataHandler()
+export default earthquakeDataHandler
+

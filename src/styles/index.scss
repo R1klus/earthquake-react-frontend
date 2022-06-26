@@ -1,0 +1,25 @@
+@import "colors";
+@import "fonts";
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin: 0;
+  font-weight: normal;
+}
+
+#light {
+  background-color: $cultured;
+}
+
+#dark {
+  background-color: $onyx;
+}
