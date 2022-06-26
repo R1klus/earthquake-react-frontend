@@ -13,7 +13,17 @@
 }
 
 .mapboxgl-canvas {
-  border-radius: 1% !important;
+  border-radius: 1%;
+}
+
+#light .mapboxgl-map {
+  border-radius: 1%;
+  box-shadow: 1px 1px 7px 0.125px $battleship-grey
+}
+
+#dark .mapboxgl-map {
+  border-radius: 1%;
+  box-shadow: 1px 1px 7px 0.125px black
 }
 
 .bi-current-location {
@@ -29,19 +39,30 @@
 .map-legend {
   position: absolute;
   margin: 1rem 0 0 1rem;
-  width: 12rem;
+  width: 11rem;
   text-align: center;
   backdrop-filter: blur(0.25rem);
   border-radius: 0.25rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+}
+
+#light .map-legend {
   border: 1px solid $battleship-grey;
-  box-shadow: 2px 2px 2px $battleship-grey;
+  box-shadow: 1px 1px 7px 0.125px $battleship-grey;
   color: $battleship-grey;
+}
+
+#dark .map-legend {
+  border: 1px solid black;
+  box-shadow: 1px 1px 7px 0.125px black;
+  color: $light-gray;
 }
 
 .richter-scale {
   width: 10rem;
+  height: 0.5rem;
   background: linear-gradient(90deg, rgba(250,179,10,1) 0%, rgba(245,125,23,1) 25%, rgba(250,52,10,1) 100%);
   margin-top: 0.15rem;
 }

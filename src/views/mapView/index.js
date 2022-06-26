@@ -3,7 +3,6 @@ import {useDispatch} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi} from "../../redux/actions";
 import EarthquakeMap from "../../components/map";
-import Navbar from "../../components/navBar";
 
 const MapView = () => {
     const dispatch = useDispatch();
@@ -18,7 +17,7 @@ const MapView = () => {
 
     return (
         <div>
-            <Navbar/>
+
             <div className="flex-container">
                 <EarthquakeMap/>
             </div>

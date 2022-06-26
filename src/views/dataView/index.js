@@ -2,7 +2,6 @@ import {useEffect} from 'react';
 import {useDispatch} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi} from "../../redux/actions";
-import Navbar from "../../components/navBar";
 
 const DataView = () => {
     const dispatch = useDispatch();
@@ -17,7 +16,7 @@ const DataView = () => {
 
     return (
         <div>
-            <Navbar/>
+
             <div className="flex-container">
                 <h1>
                     Tables!

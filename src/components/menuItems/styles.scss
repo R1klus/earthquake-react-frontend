@@ -4,13 +4,27 @@
   text-decoration: none;
   font-weight: bold;
   padding: 0.5rem 1rem;
+}
+
+#light .menu-item {
   color: $battleship-grey;
+}
+
+#light .menu-item:hover {
+  text-decoration-color: $cultured;
+}
+
+#dark .menu-item {
+  color: $light-gray;
+}
+
+#light .menu-item:hover {
+  text-decoration-color: $light-gray;
 }
 
 
 .menu-item:hover {
   text-decoration: underline;
-  text-decoration-color: $cultured;
   text-decoration-thickness: 4px;
   border-radius: 4px;
   transition: all 0.2s ease-out;
