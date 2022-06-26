@@ -26,21 +26,31 @@
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-evenly;
+  height: 4rem;
+  align-items: center;
   font-size: 1.4rem;
-  font-weight: bold;
 }
 
 #light .data-table-header {
-  border-bottom: 1px solid $battleship-grey;
+  border-bottom: 4px solid $battleship-grey;
 }
 
 #dark .data-table-header {
-  border-bottom: 1px solid $light-gray;
+  border-bottom: 4px solid $light-gray;
 }
 
 .data-table-column-heading {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
   width: 14.28%;
   text-align: center;
+  cursor: pointer;
+}
+
+#sort-by {
+  font-weight: bolder;
 }
 
 .data-table-content {
@@ -54,7 +64,7 @@
   flex-flow: column wrap;
   justify-content: space-between;
   width: 100%;
-  height: 4rem;
+  height: 5rem;
   padding: 0.5rem;
   align-items: center;
 
