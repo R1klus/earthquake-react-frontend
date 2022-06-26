@@ -3,6 +3,7 @@ import {useDispatch} from 'react-redux';
 import './styles.scss';
 import {fetchFromApi} from "../../redux/actions";
 
+
 const DataView = () => {
     const dispatch = useDispatch();
 
@@ -16,7 +17,6 @@ const DataView = () => {
 
     return (
         <div>
-
             <div className="flex-container">
                 <h1>
                     Tables!

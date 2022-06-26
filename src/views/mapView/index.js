@@ -17,7 +17,6 @@ const MapView = () => {
 
     return (
         <div>
-
             <div className="flex-container">
                 <EarthquakeMap/>
             </div>
