@@ -2,7 +2,6 @@
 
 .menu-item {
   text-decoration: none;
-  font-weight: bold;
   padding: 0.5rem 1rem;
 }
 
@@ -10,23 +9,12 @@
   color: $battleship-grey;
 }
 
-#light .menu-item:hover {
-  text-decoration-color: $cultured;
-}
-
 #dark .menu-item {
   color: $light-gray;
 }
 
-#light .menu-item:hover {
-  text-decoration-color: $light-gray;
-}
-
-
 .menu-item:hover {
-  text-decoration: underline;
-  text-decoration-thickness: 4px;
-  border-radius: 4px;
+  font-weight: bold;
   transition: all 0.2s ease-out;
 }
 

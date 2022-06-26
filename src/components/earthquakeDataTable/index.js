@@ -1,5 +1,6 @@
 import {useDispatch, useSelector} from "react-redux";
 import "./styles.scss"
+import "../../styles/index.scss"
 import {reverseEarthquakeData, sortEarthquakeData} from "../../redux/actions";
 import {useCallback, useEffect, useState} from "react";
 import {TiArrowSortedDown, TiArrowSortedUp} from "react-icons/ti"
@@ -207,15 +208,15 @@ const EarthquakeDataTable = (callback, deps) => {
                         <span>Location</span> <TiArrowSortedDown className="sort-arrow" id={"sort-location-desc"}/> <TiArrowSortedUp className="sort-arrow" id={"sort-location-asc"}/>
                     </span>
 
-                    <span className="data-table-column-heading" onClick={(event) => {sortBy(event)}}>
+                    <span className="data-table-column-heading not-on-mobile" onClick={(event) => {sortBy(event)}}>
                         <span>Latitude</span> <TiArrowSortedDown className="sort-arrow" id={"sort-latitude-desc"}/> <TiArrowSortedUp className="sort-arrow" id={"sort-latitude-asc"}/>
                     </span>
 
-                    <span className="data-table-column-heading" onClick={(event) => {sortBy(event)}}>
+                    <span className="data-table-column-heading not-on-mobile" onClick={(event) => {sortBy(event)}}>
                         <span>Longitude</span> <TiArrowSortedDown className="sort-arrow" id={"sort-longitude-desc"}/> <TiArrowSortedUp className="sort-arrow" id={"sort-longitude-asc"}/>
                     </span>
 
-                    <span className="data-table-column-heading" onClick={(event) => {sortBy(event)}}>
+                    <span className="data-table-column-heading not-on-mobile" onClick={(event) => {sortBy(event)}}>
                         <span>Quality</span> <TiArrowSortedDown className="sort-arrow" id={"sort-quality-desc"}/> <TiArrowSortedUp className="sort-arrow" id={"sort-quality-asc"}/>
                     </span>
 
@@ -233,20 +234,20 @@ const EarthquakeDataTable = (callback, deps) => {
                             <span className="data-table-cell">
                                 {earthquake.humanReadableLocation}
                             </span>
-                            <span className="data-table-cell">
+                            <span className="data-table-cell not-on-mobile">
                                 {earthquake.latitude}
                             </span>
-                            <span className="data-table-cell">
+                            <span className="data-table-cell not-on-mobile">
                                 {earthquake.longitude}
                             </span>
-                            <span className="data-table-cell">
+                            <span className="data-table-cell not-on-mobile">
                                 {earthquake.quality}
                             </span>
                             <span className="data-table-cell">
                                 {earthquake.size}
                             </span>
                             <span className="data-table-cell">
-                                {earthquake.timestamp ? new Date(earthquake.timestamp).toString() : null}
+                                {earthquake.timestamp ? new Date(earthquake.timestamp).toUTCString() : null}
                             </span>
 
                         </div>
