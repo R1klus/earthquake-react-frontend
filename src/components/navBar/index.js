@@ -3,13 +3,21 @@ import {MenuItems} from "../menuItems/menuItems";
 import './styles.scss';
 import ReactSwitch from "react-switch"
 import {themeContext} from "../../App";
+import FrequencyInput from "../frequencyInput";
 
 const Navbar = () => {
     const [navMenu, setNavMenu] = useState(false);
+    const [fetchFrequency, setFetchFrequency] = useState(5);
     const theme = useContext(themeContext);
 
     const handleClick = () => {
         setNavMenu(!navMenu);
+    }
+
+    const incrementFetchFrequency = () => {
+        if (5 <= fetchFrequency <= 20){
+            setFetchFrequency(fetchFrequency + 1)
+        }
     }
 
     return (
@@ -20,6 +28,9 @@ const Navbar = () => {
                     <i className={navMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}/>
                 </div>
                 <ul className={navMenu ? 'nav-menu active' : 'nav-menu'}>
+                    <li>
+                        <FrequencyInput/>
+                    </li>
                     <li>
                         <div className="switch">
                             <div>Darkmode</div>

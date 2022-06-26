@@ -4,15 +4,31 @@ import MapView from "./views/mapView";
 import DataView from "./views/dataView";
 import {createContext, useEffect, useState} from "react";
 import NavBar from "./components/navBar";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchFromApi} from "./redux/actions";
+import useInterval from "use-interval";
 
 export const themeContext = createContext(null);
 
 function App() {
     const [theme, setTheme] = useState("light");
+    const dispatch = useDispatch();
+    const fetchFrequency = useSelector(({fetchFrequency}) => fetchFrequency)
+
+    const updateEarthquakeData = () => {
+        dispatch(fetchFromApi())
+    }
+
+    useInterval(() => {
+        updateEarthquakeData();
+    }, fetchFrequency)
+
+    useEffect(() => {
+        updateEarthquakeData();
+    }, [])
 
     const toggleTheme = () => {
         setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
-        console.log(theme)
     }
 
     useEffect(() => {

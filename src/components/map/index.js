@@ -16,10 +16,6 @@ const EarthquakeMap = () => {
     const theme = useContext(themeContext);
 
     useEffect(() => {
-        console.log(earthquakes)
-    }, [earthquakes])
-
-    useEffect(() => {
         switch(theme.currentTheme){
             case "light":
                 setMapTheme(lightMapTheme)
