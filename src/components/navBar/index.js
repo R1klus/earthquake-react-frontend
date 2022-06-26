@@ -14,21 +14,18 @@ const Navbar = () => {
 
     return (
 
-        <div className='Navbar'>
-            <nav className='NavbarItems'>
+        <div className='navbar'>
+            <nav className='navbar-items'>
                 <div className='navbar-logo'><h1>IED</h1></div>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={navMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}/>
                 </div>
-
-
-
-
                 <ul className={navMenu ? 'nav-menu active' : 'nav-menu'}>
                     <li>
                         <div className="switch">
                             <div>Darkmode</div>
-                            <ReactSwitch height={16} width={28} onChange={theme.toggleTheme} checked={theme.currentTheme === "dark"}/>
+                            <ReactSwitch height={16} width={28} onChange={theme.toggleTheme}
+                                         checked={theme.currentTheme === "dark"}/>
                         </div>
                     </li>
 

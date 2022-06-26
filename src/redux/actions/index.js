@@ -12,4 +12,3 @@ export const fetchFromApi = () => {
         type: FETCH_FROM_API
     }
 }
-

@@ -1,17 +1,36 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useContext} from "react";
 import {useSelector} from "react-redux";
 import ReactMapGL, {Marker, Popup} from "react-map-gl"
 import "./styles.scss"
 import {MdReportProblem} from "react-icons/md"
+import {themeContext} from "../../App";
 
 
 const EarthquakeMap = () => {
+    const lightMapTheme = "mapbox://styles/mapbox/light-v10"
+    const darkMapTheme = "mapbox://styles/mapbox/dark-v10"
+
     const earthquakes = useSelector(({earthquakes}) => earthquakes);
     const [selectedEarthquake, setSelectedEarthquake] = useState(null);
+    const [mapTheme, setMapTheme] = useState(lightMapTheme)
+    const theme = useContext(themeContext);
 
     useEffect(() => {
         console.log(earthquakes)
     }, [earthquakes])
+
+    useEffect(() => {
+        switch(theme.currentTheme){
+            case "light":
+                setMapTheme(lightMapTheme)
+                break
+            case "dark":
+                setMapTheme(darkMapTheme)
+                break
+            default:
+                return setMapTheme(lightMapTheme)
+        }
+    },[theme])
 
     const [viewport, setViewport] = useState({
         latitude: 64.8085175,
@@ -56,13 +75,13 @@ const EarthquakeMap = () => {
             <ReactMapGL
                 {...viewport}
                 mapboxAccessToken={process.env.REACT_APP_MAPBOX_API_KEY}
-                mapStyle="mapbox://styles/mapbox/light-v10"
+                mapStyle={mapTheme}
                 onMove={evt => setViewport(evt.viewState)}
             >
                 <div className="map-legend">
-                    <h2>
+                    <h3>
                     Richter Scale
-                    </h2>
+                    </h3>
                 <div className="richter-scale">&nbsp;</div>
                     <div className="richter-data-labels"><span>0</span> <span>2</span> <span>4</span> <span>6</span> <span>8</span> <span>10</span></div>
                 </div>

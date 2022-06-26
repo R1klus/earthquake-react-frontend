@@ -1,15 +1,28 @@
 @import "../../styles/colors.scss";
 
-.NavbarItems {
+#light .navbar {
+  box-shadow: 0px 0px 10px 1px $battleship-grey
+}
+
+#dark .navbar {
+  box-shadow: 0px 0px 10px 1px black
+}
+
+.navbar-items {
   display: flex;
   justify-content: flex-start;
   align-items: center;
   font-size: 1.5rem;
   height: 2.75rem;
   padding-left: 2.5%;
+}
+
+#light .navbar-items {
   background: $silver-sand;
+}
 
-
+#dark .navbar-items {
+  background: $jet;
 }
 
 .navbar-logo {
@@ -17,10 +30,17 @@
   justify-content: flex-start;
   align-items: center;
   cursor: pointer;
-  color: $battleship-grey;
   font-weight: bold;
   height: 100%;
   font-size: 2.5rem;
+}
+
+#light .navbar-logo {
+  color: $battleship-grey;
+}
+
+#dark .navbar-logo {
+  color: $light-gray;
 }
 
 .nav-menu {
@@ -50,11 +70,18 @@
   align-items: center;
   justify-content: space-between;
   font-size: 1rem;
+}
+
+#light .switch {
   color: $battleship-grey;
 }
 
+#dark .switch {
+  color: $light-gray;
+}
+
 @media screen and (max-width: 960px) {
-  .NavbarItems {
+  .navbar-items {
     position: relative;
   }
 
