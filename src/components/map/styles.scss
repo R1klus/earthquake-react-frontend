@@ -58,6 +58,12 @@
   border: 1px solid black;
   box-shadow: 1px 1px 7px 0.125px black;
   color: $light-gray;
+  width: 12rem;
+  text-align: center;
+  backdrop-filter: blur(0.25rem);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .richter-scale {
