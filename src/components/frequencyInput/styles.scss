@@ -1,0 +1,51 @@
+@import "../../styles/colors";
+
+.frequency-input {
+  display: flex;
+  height: inherit;
+  width: 18rem;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 1rem;
+}
+
+#light .frequency-input {
+  color: $battleship-grey;
+}
+
+#dark .frequency-input {
+  color: $light-gray;
+}
+
+.frequency-container{
+  display: flex;
+  align-self: center;
+  justify-content: space-evenly;
+  align-items: center;
+  width:15%;
+  height: 75%;
+  border-radius: 40px;
+  transition: 0.5s;
+  font-weight: bold;
+}
+
+.frequency-container:hover {
+  width: 20%;
+  font-size: 1.3rem;
+}
+
+.frequency-container .frequency-next {
+  cursor: pointer;
+}
+
+.frequency-container .frequency-prev {
+  cursor: pointer;
+}
+
+#light .frequency-container {
+  border: 2px solid $battleship-grey;
+}
+
+#dark .frequency-container {
+  border: 2px solid $light-gray;
+}

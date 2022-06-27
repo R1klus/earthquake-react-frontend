@@ -3,6 +3,8 @@ import {MenuItems} from "../menuItems/menuItems";
 import './styles.scss';
 import ReactSwitch from "react-switch"
 import {themeContext} from "../../App";
+import FrequencyInput from "../frequencyInput";
+import {MdReportProblem} from "react-icons/md";
 
 const Navbar = () => {
     const [navMenu, setNavMenu] = useState(false);
@@ -13,14 +15,16 @@ const Navbar = () => {
     }
 
     return (
-
         <div className='navbar'>
             <nav className='navbar-items'>
-                <div className='navbar-logo'><h1>IED</h1></div>
+                <div className='navbar-logo'><a href="/"><MdReportProblem/></a><a href="/"><span className="not-on-mobile">Icelandic Earthquake Data</span><span className="on-mobile">IED</span></a></div>
                 <div className='menu-icon' onClick={handleClick}>
                     <i className={navMenu ? 'fa-solid fa-xmark' : 'fa-solid fa-bars'}/>
                 </div>
                 <ul className={navMenu ? 'nav-menu active' : 'nav-menu'}>
+                    <li>
+                        <FrequencyInput/>
+                    </li>
                     <li>
                         <div className="switch">
                             <div>Darkmode</div>
@@ -34,7 +38,6 @@ const Navbar = () => {
                             <li key={item.title}><a className={item.cName} href={item.url}>{item.title}</a></li>
                         )
                     })}
-
                 </ul>
             </nav>
         </div>

@@ -4,18 +4,32 @@ import MapView from "./views/mapView";
 import DataView from "./views/dataView";
 import {createContext, useEffect, useState} from "react";
 import NavBar from "./components/navBar";
+import {useDispatch, useSelector} from "react-redux";
+import {fetchFromApi} from "./redux/actions";
+import useInterval from "use-interval";
 
 export const themeContext = createContext(null);
 
 function App() {
     const [theme, setTheme] = useState("light");
+    const dispatch = useDispatch();
+    const fetchFrequency = useSelector(({fetchFrequency}) => fetchFrequency)
+
+    const updateEarthquakeData = () => {
+        dispatch(fetchFromApi())
+    }
+
+    useInterval(() => {
+        updateEarthquakeData();
+    }, fetchFrequency)
+
 
     const toggleTheme = () => {
         setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
-        console.log(theme)
     }
 
     useEffect(() => {
+        dispatch(fetchFromApi())
         const darkThemeOsSetting = window.matchMedia("(prefers-color-scheme: dark)")
         const localStorageTheme = window.localStorage.getItem("theme")
         if(localStorageTheme === null){
@@ -27,7 +41,7 @@ function App() {
         }else {
             setTheme(JSON.parse(window.localStorage.getItem("theme")));
         }
-    }, [])
+    }, [dispatch])
 
     useEffect(() => {
         window.localStorage.setItem("theme", JSON.stringify(theme));

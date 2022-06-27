@@ -5,10 +5,10 @@
 }
 
 .map-container {
-  height: 90vh;
-  width: 90vw;
-  padding: 20px;
-  margin: auto;
+  height: 95vh;
+  width: 99vw;
+  padding: 1rem 1.5rem 1.5rem 1.5rem;
+  left: 50%;
   border-radius: 10%;
 }
 
@@ -58,6 +58,12 @@
   border: 1px solid black;
   box-shadow: 1px 1px 7px 0.125px black;
   color: $light-gray;
+  width: 12rem;
+  text-align: center;
+  backdrop-filter: blur(0.25rem);
+  border-radius: 0.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .richter-scale {

@@ -1,12 +1,8 @@
+@import "../../styles/colors";
+
 .flex-container {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   flex-grow: 1;
-}
-
-.flex-container h1 {
-  width: 100%;
-  margin: auto;
-  text-align: center;
 }

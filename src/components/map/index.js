@@ -16,10 +16,6 @@ const EarthquakeMap = () => {
     const theme = useContext(themeContext);
 
     useEffect(() => {
-        console.log(earthquakes)
-    }, [earthquakes])
-
-    useEffect(() => {
         switch(theme.currentTheme){
             case "light":
                 setMapTheme(lightMapTheme)
@@ -35,7 +31,7 @@ const EarthquakeMap = () => {
     const [viewport, setViewport] = useState({
         latitude: 64.8085175,
         longitude: -18.806046007266094,
-        zoom: 6,
+        zoom: 5.4,
     })
 
     const calculateColorValue = (percentage) => {

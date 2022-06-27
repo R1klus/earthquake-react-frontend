@@ -1,70 +1,115 @@
-# Getting Started with Create React App
+# IED - Icelandic Earthquake Data
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Screenshots
 
-## Available Scripts
+### Map Lightmode
+![Map Lightmode](/screenshots/map-light.png)
+### Map Darkmode
+![Map Darkmode](/screenshots/map-dark.png)
+### Table Lightmode
+![Table Lightmode](/screenshots/table-light.png)
+### Table Darkmode
+![Table Darkmode](/screenshots/table-dark.png)
 
-In the project directory, you can run:
+## Application Description
 
-### `npm start`
+This frontend displays the latest earthquake data from the [apiis.is](https://apis.is/earthquake/is).
+It is written in Javascript using React as a framework. There is a map that displays the location of recent earthquakes, as well as a tabular data view to examine the data.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Table of Contents
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+* [Demo](#demo)
+* [Tech Stack](#tech-stack)
+* [Features](#features)
+* [Installation](#installation)
+* [Configuration Setup](#configuration-setup)
+* [Usage](#usage)
+* [License](#license)
+* [Contact Information](#contact-information)
 
-### `npm run build`
+## Demo
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+View the application at [Icelandic Earthquake Data](http://earthquake-react-app-prod.herokuapp.com)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technology Stack
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    React
+    Redux (react-redux)
+    Mapbox (react-map-gl)
+    
 
-### `npm run eject`
+## Features
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+This frontend features an interactable map. The map includes clickable map markers that display detailed information about each earthquake.
+There is also a tabular data view, that can be sorted by any column. The frontend fetches data periodically, the interval can be configured in the navigation bar.
+You can toggle between lightmode and darkmode as well in the navigation bar. There is also a rudimentary mobile view.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. `git clone git@github.com:R1klus/icelandic-earthquake-data.git`
+2. `cd icelandic-earthquake-data`
+3. `npm install`
+4. `npm start`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Configuration Setup
 
-## Learn More
+For the application to run properly you need to have a Mapbox API Key which can be retrieved [here](https://www.mapbox.com/), and configure a .env file according to the .env.template file that can be viewed in the repository
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+    REACT_APP_EARTHQUAKE_API_URL=
+    REACT_APP_MAPBOX_API_KEY=
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+### Map controls - Desktop
+To pan the view you can left click and drag. \
+To pitch and rotate the view you can right click and drag. \
+To zoom in and out you can use the scroll wheel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Map controls - Mobile
+To pan the view you can you a single finger and drag. \
+To pitch and rotate the view you can use a two finger pinch and rotate. \
+To zoom in and out you can use a two finger pinch.
 
-### Analyzing the Bundle Size
+### Navigation controls - Desktop
+Map and Data redirect you to either the map view or the tabular data view respectively. \
+Darkmode can be toggled with by clicking the toggle in the navigation bar. \
+Fetch interval can be changed by clicking either the right arrow to increment by one minute or the left arrow to decrement by one minute.
+Note: The quickest interval is 5 minutes (default) and the slowest is 20 minutes. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Navigation controls - Mobile
+When in the mobile view you can click the burger menu icon to drop-down a navigation menu. And to close it again you can press the X. 
+Other controls are the same as in the desktop mode
 
-### Making a Progressive Web App
+### Data controls - Desktop
+You can hover over each row to highlight it. And you can click the heading of each column to sort the data by that column. If you click the same column twice you will reverse sort the data by that column.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+MIT License
 
-### Deployment
+Copyright (c) 2022 Ríkharður Friðgeirsson
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
 
-### `npm run build` fails to minify
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+## Contact Information
+
+[Email](rikhardur.fridgeirsson@gmail.com)
